@@ -154,3 +154,27 @@ button {
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+.image-container {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.image-container img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* FOOTER */
+.main-footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fce302;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  border-top: 1px solid #0044ff75;
+}
