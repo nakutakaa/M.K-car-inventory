@@ -39,4 +39,22 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     versionInputs.appendChild(group);
 
+        
+    group
+      .querySelector(".image-upload")
+      .addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            const img =
+              group.querySelector(".image-preview") ||
+              document.createElement("img");
+            img.className = "image-preview";
+            img.src = event.target.result;
+            group.appendChild(img);
+          };
+          reader.readAsDataURL(file);
+        }
+      });
 });    

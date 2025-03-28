@@ -33,3 +33,49 @@ body {
   padding: 15px;
   border-radius: 8px;
 }
+
+/*  FORM STYLES  */
+.add-car {
+  background-color: rgba(255, 255, 255, 0.226);
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 8px;
+  color: #0011fd;
+}
+
+#add-car-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.version-group {
+  margin-bottom: 15px;
+  padding: 15px;
+  background: rgba(249, 249, 249, 0.8);
+  border-radius: 6px;
+}
+
+/* BUTTONS */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+#save-car-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+#save-car-btn:hover {
+    background-color: #00fd08;
+    color:black
+}
