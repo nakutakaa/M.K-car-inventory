@@ -111,4 +111,55 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Error saving car. Check console for details.");
       }
     }
+
+
+
+    async function loadCars() {
+      try {
+        const response = await fetch("http://localhost:3000/cars");
+        renderCars(await response.json());
+      } catch (error) {
+        console.error("Error loading cars:", error);
+      }
+    }
+
+    function renderCars(cars) {
+      carsContainer.innerHTML = cars
+        .map(
+          (car) => `
+      <div class="car-model" data-id="${car.id}">
+        <h3>${car.make} ${car.model}</h3>
+        <div class="car-actions">
+          <button class="edit-btn">EDIT</button>
+          <button class="delete-btn">DELETE</button>
+        </div>
+        <div class="versions-container">
+          ${car.versions
+            .map(
+              (version) => `
+            <div class="version">
+              <div class="image-container">
+                ${version.image ? `<img src="${version.image}">` : "No Image"}
+              </div>
+              <p>Condition: ${version.condition}</p>
+              <p>Price: $${version.price.toLocaleString()}</p>
+            </div>
+          `
+            )
+            .join("")}
+        </div>
+      </div>
+    `
+        )
+        .join("");
+
+      document.querySelectorAll(".delete-btn").forEach((btn) => {
+        btn.addEventListener("click", deleteCar);
+      });
+
+      document.querySelectorAll(".edit-btn").forEach((btn) => {
+        btn.addEventListener("click", editCar);
+      });
+    }
+
 });    
