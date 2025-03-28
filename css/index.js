@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+    
     async function loadCars() {
       try {
         const response = await fetch("http://localhost:3000/cars");
@@ -160,6 +161,31 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".edit-btn").forEach((btn) => {
         btn.addEventListener("click", editCar);
       });
+    }
+
+    async function deleteCar(e) {
+        const carId = e.target.closest(".car-model").dataset.id;
+        if (confirm("Delete this car permanently?")) {
+            await fetch(`http://localhost:3000/cars/${carId}`, {
+                method: "DELETE",
+            });
+            loadCars();
+        }
+    }
+    async function editCar(e) {
+      const carId = e.target.closest(".car-model").dataset.id;
+      const response = await fetch(`http://localhost:3000/cars/${carId}`);
+      const car = await response.json();
+
+      currentCarId = car.id;
+      document.getElementById("car-make").value = car.make;
+      document.getElementById("car-model").value = car.model;
+
+      versionInputs.innerHTML = "";
+      car.versions.forEach((version) => {
+        addVersionInput(version);
+      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
 });    
