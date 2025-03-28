@@ -15,4 +15,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     loadCars();
+
+
+
+    function addVersionInput(version = { condition: "", price: "", image: "" }) {
+    const versionId = Date.now();
+    const group = document.createElement("div");
+    group.className = "version-group";
+    group.innerHTML = `
+      <input type="text" placeholder="Condition (e.g., clean)" value="${
+        version.condition
+      }" required>
+      <input type="number" placeholder="Price" value="${
+        version.price
+      }" required>
+      <input type="file" class="image-upload" accept="image/*">
+      <button type="button" class="remove-version">REMOVE</button>
+      ${
+        version.image
+          ? `<img src="${version.image}" class="image-preview">`
+          : ""
+      }
+    `;
+    versionInputs.appendChild(group);
+
 });    
