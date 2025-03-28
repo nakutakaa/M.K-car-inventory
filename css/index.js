@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function addVersionInput(version = { condition: "", price: "", image: "" }) {
-    const versionId = Date.now();
-    const group = document.createElement("div");
-    group.className = "version-group";
-    group.innerHTML = `
+      const versionId = Date.now();
+      const group = document.createElement("div");
+      group.className = "version-group";
+      group.innerHTML = `
       <input type="text" placeholder="Condition (e.g., clean)" value="${
         version.condition
       }" required>
@@ -37,24 +37,34 @@ document.addEventListener("DOMContentLoaded", () => {
           : ""
       }
     `;
-    versionInputs.appendChild(group);
+      versionInputs.appendChild(group);
 
-        
-    group
-      .querySelector(".image-upload")
-      .addEventListener("change", function (e) {
-        const file = e.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = (event) => {
-            const img =
-              group.querySelector(".image-preview") ||
-              document.createElement("img");
-            img.className = "image-preview";
-            img.src = event.target.result;
-            group.appendChild(img);
-          };
-          reader.readAsDataURL(file);
+      group
+        .querySelector(".image-upload")
+        .addEventListener("change", function (e) {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+              const img =
+                group.querySelector(".image-preview") ||
+                document.createElement("img");
+              img.className = "image-preview";
+              img.src = event.target.result;
+              group.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+
+      
+      
+        group.querySelector(".remove-version").addEventListener("click", () => {
+        if (document.querySelectorAll(".version-group").length > 1) {
+          group.remove();
+        } else {
+          alert("At least one version is required");
         }
       });
+    }
 });    
