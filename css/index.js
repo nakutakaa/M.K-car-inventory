@@ -67,4 +67,48 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
+
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+
+      const make = document.getElementById("car-make").value;
+      const model = document.getElementById("car-model").value;
+
+      const versionGroups = document.querySelectorAll(".version-group");
+      const versions = [];
+
+      for (const group of versionGroups) {
+        const inputs = group.querySelectorAll("input");
+        const fileInput = group.querySelector(".image-upload");
+        const previewImg = group.querySelector(".image-preview");
+
+        versions.push({
+          condition: inputs[0].value,
+          price: Number(inputs[1].value),
+          image: previewImg ? previewImg.src : "",
+        });
+      }
+
+      const carData = { make, model, versions };
+      const url = currentCarId
+        ? `http://localhost:3000/cars/${currentCarId}`
+        : "http://localhost:3000/cars";
+
+      try {
+        await fetch(url, {
+          method: currentCarId ? "PUT" : "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(carData),
+        });
+
+        addCarForm.reset();
+        versionInputs.innerHTML = "";
+        addVersionInput();
+        currentCarId = null;
+        loadCars();
+      } catch (error) {
+        console.error("Error saving car:", error);
+        alert("Error saving car. Check console for details.");
+      }
+    }
 });    
