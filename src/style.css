@@ -119,3 +119,38 @@ button {
   background-color: #fffb0200;
   color:yellow
 }
+
+.delete-btn {
+  background-color: #f7030377;
+  color: white;
+  
+}
+.delete-btn:hover {
+    background-color: #ff0000;
+    color:#000
+}
+
+/* CAR DISPLAY */
+.car-list {
+  background-color: rgba(15, 14, 14, 0.226);
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 8px;
+  color:#0453fd
+}
+
+.versions-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.version {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
