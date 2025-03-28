@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M.K AUTOS</title>
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1>M.K AUTOS LTD</h1>
+  </header>
+  <section class="welcome-message">
+    <p>Welcome to M.K Autos where you can add, delete or edit any car as per your taste!</p>
+  </section>
+  <main class="content">
+    <section class="add-car">
+      <h2>Add a Car</h2>
+      <form id="add-car-form">
+        <input type="text" id="car-make" placeholder="Make (e.g., Toyota)" required>
+        <input type="text" id="car-model" placeholder="Model (e.g., Supra)" required>
+        <div class="version-inputs">
+          
+        </div>
+        <div class="form-buttons">
+          <button type="button" id="add-version-btn">+ Add Version</button>
+          <button type="submit" id="save-car-btn">Save Car</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="car-list">
+      <h2>Your Cars</h2>
+      <div id="cars-container"></div>
+    </section>
+  </main>
+  <footer class="main-footer">
+    <p>&copy; YOUR CAR YOUR CHOICE BUDDY</p>
+  </footer>
+  <script src="../css/index.js"></script>
+</body>
+</html>
