@@ -79,3 +79,43 @@ button {
     background-color: #00fd08;
     color:black
 }
+
+#add-version-btn {
+  background-color: #2196F3;
+  color: white;
+}
+#add-version-btn:hover {
+    background-color: #0044ff;
+    color:#030303
+}
+
+.remove-version {
+  background-color: #030303;
+  color: rgb(250, 3, 3);
+  margin-top: 8px;
+}
+.remove-version:hover {
+    background-color: #ff0000;
+    color:#030303
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.car-actions {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.edit-btn {
+  background-color: #ffc107c0;
+  color: #000;
+}
+.edit-btn:hover {
+  background-color: #fffb0200;
+  color:yellow
+}
