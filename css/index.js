@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const carsContainer = document.getElementById("cars-container");
   const addCarForm = document.getElementById("add-car-form");
