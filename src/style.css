@@ -1,0 +1,35 @@
+
+
+body {
+  background: url('https://wallpapers.com/images/high/black-car-4k-wnfjwxcbybpwbs08.webp') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.main-header {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 20px;
+  border-bottom: 1px solid #001aff7a;
+}
+
+.main-header h1 {
+  color: #ffe603;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.welcome-message {
+  max-width: 1200px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.welcome-message p {
+  color: white;
+  font-size: 1.2em;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 8px;
+}

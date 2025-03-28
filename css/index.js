@@ -12,4 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addVersionBtn.addEventListener("click", addVersionInput);
     addCarForm.addEventListener("submit", handleFormSubmit);
+
+
+    loadCars();
 });    
